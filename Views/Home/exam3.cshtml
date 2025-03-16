@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>exam3</title>
+</head>
+<body>
+    @{
+        Student[] students = Model;
+        var stg = from s in students
+                  group s by s.Last into sg
+                  select new 
+                  {
+                    LastName = sg.Key,
+                    AverageScore = sg.SelectMany(s => s.Scores).DefaultIfEmpty(0).Average()
+                  };
+    }
+    <div>
+        @foreach(var st in stg) {
+            <p>@st.LastName.ToString()&nbsp;:&nbsp;@st.AverageScore.ToString("F2")</p>
+        }
+    </div>
+</body>
+</html>

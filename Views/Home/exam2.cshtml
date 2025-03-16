@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>exam2</title>
+</head>
+
+<body>
+    <div>
+        @{
+            Student[] students = Model;
+        }
+
+        <table>
+            @foreach (Student student in students)
+            {
+                int scores = 0;
+                <tr>
+                    <td>First name : </td>
+                    <td>@student.First</td>
+                </tr>
+                <tr>
+                    <td>Last name : </td>
+                    <td>@student.Last</td>
+                </tr>
+                <tr>
+                    <td>Scores : </td>
+                    <td>@student.Scores.DefaultIfEmpty(scores).Average()</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</body>
+
+</html>

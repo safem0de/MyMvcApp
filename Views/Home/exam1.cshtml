@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+    @model Dictionary<int, string>
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>exam1</title>
+</head>
+<body>
+    exam1<br /><br />
+    <div>
+        <div> ปีที่เดือนมกราคม&nbsp;มีวันเสาร์&nbsp;5&nbsp;วัน&nbsp;วันอาทิตย์&nbsp;5&nbsp;วัน&nbsp;และวันจันทร์&nbsp;5&nbsp;วัน </div>
+        <br />
+        @foreach(var year in Model) {
+            <div>@year.Key : @year.Value</div>
+        }
+        <br />
+        <h4>Summary: ปีที่เข้าเงื่อนไขทั้งหมด</h4>
+        <div>
+            @{
+                var yesYears = Model.ToList().Where(y => y.Value == "Yes").Select(y => y.Key);
+            }
+            @if (yesYears.Any())
+            {
+                <p>@string.Join(", ", yesYears)</p>
+            }
+            else
+            {
+                <p>ไม่มีปีที่เข้าเงื่อนไข</p>
+            }
+        </div>
+    </div>
+</body>
+</html>
