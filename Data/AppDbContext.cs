@@ -19,14 +19,24 @@ namespace MyMvcApp.Data
             modelBuilder.Entity<Course>().HasData(
                 new Course { Id = 1, CourseName = "ภาษาไทยเพื่ออาชีพ", Credit = 3 },
                 new Course { Id = 2, CourseName = "ภาษาอังกฤษฟัง-พูด 1", Credit = 3 },
-                new Course { Id = 3, CourseName = "หน้าที่พลเมืองและศีลธรรม", Credit = 3 }
+                new Course { Id = 3, CourseName = "หน้าที่พลเมืองและศีลธรรม", Credit = 3 },
+                new Course { Id = 4, CourseName = "ความรู้เกี่ยวกับงานอาชีพ", Credit = 1 },
+                new Course { Id = 5, CourseName = "วัสดุงานช่างอุตสาหกรรม", Credit = 2 },
+                new Course { Id = 6, CourseName = "งานเชื่อมและโลหะแผ่นเบื้องต้น", Credit = 1 },
+                new Course { Id = 7, CourseName = "งานถอดประกอบเครื่องกลเบื้องต้น", Credit = 2 },
+                new Course { Id = 8, CourseName = "เขียนแบบเครื่องมือกล", Credit = 3 },
+                new Course { Id = 9, CourseName = "กรรมวิธีการผลิต", Credit = 3 },
+                new Course { Id = 10, CourseName = "ผลิตชิ้นส่วนด้วยเครื่องมือกล", Credit = 1 },
+                new Course { Id = 11, CourseName = "กิจกรรมลูกเสือวิสามัญ", Credit = 1 },
+                new Course { Id = 12, CourseName = "English conversation", Credit = 1 }
             );
 
             // ✅ Seed Data สำหรับ STUDENT_GROUPS
             modelBuilder.Entity<StudentGroup>().HasData(
                 new StudentGroup { Id = 1, GroupCode = "2/1" },
                 new StudentGroup { Id = 2, GroupCode = "2/2" },
-                new StudentGroup { Id = 3, GroupCode = "2/3" }
+                new StudentGroup { Id = 3, GroupCode = "2/3" },
+                new StudentGroup { Id = 4, GroupCode = "2/4" }
             );
 
             // ✅ Seed Data สำหรับ STUDYING (ข้อมูลการลงทะเบียนเรียน)
